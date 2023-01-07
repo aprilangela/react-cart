@@ -1,5 +1,6 @@
 
-export default function Header(){
+export default function Header(props){
+    const {countCartItems}=props;
     return (
     <div className="block row center">
         <div>
@@ -8,7 +9,10 @@ export default function Header(){
             </a>
         </div>
         <div>
-            <a href="#/cart">Cart</a>  <a href="#/singin">Sing In</a>
+            <a href="#/cart">Cart
+            {countCartItems? (
+            <button className="badge">{countCartItems}</button>):('')}
+            </a>  <a href="#/singin">Sing In</a>
         </div>
     </div>
     );
